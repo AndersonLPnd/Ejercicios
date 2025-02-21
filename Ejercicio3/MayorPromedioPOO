@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class MayorPromedioPOO {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        final int NUM_ALUMNOS = 20;
+        final int NUM_UNIDADES = 5;
+        
+        int mejorAlumno = 0;
+        double mejorPromedio = 0.0;
+        
+        for (int i = 1; i <= NUM_ALUMNOS; i++) {
+            System.out.print("Ingrese el numero de control del alumno " + i + ": ");
+            int numControl = scanner.nextInt();
+            
+            double sumaCalificaciones = 0.0;
+            for (int j = 1; j <= NUM_UNIDADES; j++) {
+                System.out.print("Ingrese la calificacion de la unidad " + j + " para el alumno " + numControl + ": ");
+                double calificacion = scanner.nextDouble();
+                sumaCalificaciones += calificacion;
+            }
+            
+            double promedio = sumaCalificaciones / NUM_UNIDADES;
+            
+            if (promedio > mejorPromedio) {
+                mejorPromedio = promedio;
+                mejorAlumno = numControl;
+            }
+        }
+        
+        System.out.println("El alumno con el mejor promedio es el de numero de control " + mejorAlumno + " con un promedio de " + mejorPromedio);
+        
+        scanner.close();
+    }
+}
