@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class PagoMensual {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese el numero de meses a pagar: ");
+        int meses = scanner.nextInt();
+        
+        double pagoMensual = 100.00;
+        double totalPago = 0.0;
+        
+        System.out.println("Detalle de pagos mensuales:");
+        for (int i = 1; i <= meses; i++) {
+            System.out.println("Mes " + i + ": $" + pagoMensual);
+            totalPago += pagoMensual;
+            pagoMensual *= 2;
+        }
+        
+        System.out.println("Total a pagar despues de " + meses + " meses: $" + totalPago);
+        
+        scanner.close();
+    }
+}
