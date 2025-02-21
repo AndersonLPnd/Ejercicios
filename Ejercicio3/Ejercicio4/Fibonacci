@@ -1,0 +1,15 @@
+public class Fibonacci {
+    public static void main(String[] args) {
+        final int NUM_TERM = 50;
+        long num1 = 0, num2 = 1;
+        
+        System.out.println("Los primeros " + NUM_TERM + " numeros de la sucesion de Fibonacci son:");
+        
+        for (int i = 0; i < NUM_TERM; i++) {
+            System.out.println(num1);
+            long siguiente = num1 + num2;
+            num1 = num2;
+            num2 = siguiente;
+        }
+    }
+}
